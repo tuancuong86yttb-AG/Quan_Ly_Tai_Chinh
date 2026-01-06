@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import { Transaction } from "../types";
 
 // Always use the API key directly from process.env.API_KEY as per guidelines
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export const analyzeFinances = async (transactions: Transaction[]) => {
   try {
