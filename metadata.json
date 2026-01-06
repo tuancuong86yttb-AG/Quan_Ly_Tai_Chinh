@@ -1,0 +1,7 @@
+{
+  "name": "Quản lý Tài chính Công đoàn - Đảng phí - Văn phòng",
+  "description": "Ứng dụng quản lý thu chi chuyên nghiệp dành cho các tổ chức đoàn thể và văn phòng, tích hợp trí tuệ nhân tạo Gemini để phân tích dữ liệu tài chính.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
