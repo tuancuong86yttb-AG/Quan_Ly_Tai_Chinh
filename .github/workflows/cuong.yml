@@ -1,0 +1,29 @@
+name: Kiem Tra Code Tu Dong
+
+# 1. Khi nào thì chạy? (Khi bạn push code lên nhánh main)
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# 2. Các công việc cần làm
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Chạy trên máy chủ ảo Ubuntu
+
+    steps:
+    - name: Lay code tu kho ve máy ảo
+      uses: actions/checkout@v4
+
+    - name: Thong bao bat dau
+      run: echo "He thong dang bat dau kiem tra code cho Quan_Ly_Tai_Chinh..."
+
+    # Buoc nay tuy thuoc vao ngon ngu lap trinh cua ban
+    # Neu la Node.js, hay bo dau # ở các dòng dưới:
+    # - name: Cai dat Node.js
+    #   uses: actions/setup-node@v3
+    #   with:
+    #     node-version: '18'
+    # - run: npm install
+    # - run: npm test
