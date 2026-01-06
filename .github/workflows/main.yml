@@ -1,0 +1,25 @@
+name: Kiểm tra Code Tự động
+
+on:
+  push:
+    branches: [ "main" ] # Chạy khi bạn push code lên branch main
+  pull_request:
+    branches: [ "main" ] # Chạy khi có yêu cầu gộp code vào main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Chạy trên máy chủ ảo Ubuntu của GitHub
+
+    steps:
+    - uses: actions/checkout@v4 # Bước 1: Lấy code từ repository về máy ảo
+
+    - name: Cài đặt Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Cài đặt phiên bản Node 20
+
+    - name: Cài đặt thư viện
+      run: npm install # Chạy lệnh cài đặt các gói dependencies
+
+    - name: Chạy thử (Test)
+      run: npm test --if-present # Chạy lệnh test nếu dự án có file test
